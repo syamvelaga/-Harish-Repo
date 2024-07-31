@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { Link } from 'react-router-dom'
-import { getOrderDetails, payOrder, deliverOrder } from '../actions/orderActions'
+import { getOrderDetails, deliverOrder } from '../actions/orderActions'
 import {useHistory} from 'react-router-use-history'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -80,10 +80,10 @@ const OrderOrderScreen = () => {
         }
     })
 
-    const successPaymentHandler = (paymentResult)=>{
-        console.log(paymentResult)
-        dispatch(payOrder(orderId, paymentResult))
-    }
+    // const successPaymentHandler = (paymentResult)=>{
+    //     console.log(paymentResult)
+    //     dispatch(payOrder(orderId, paymentResult))
+    // }
     
     const deliverHandler=()=>{
         dispatch(deliverOrder(order))
