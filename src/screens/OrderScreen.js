@@ -8,7 +8,7 @@ import { getOrderDetails, payOrder, deliverOrder } from '../actions/orderActions
 import {useHistory} from 'react-router-use-history'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import {PayPalButton} from 'react-paypal-button-v2'
+// import {PayPalButton} from 'react-paypal-button-v2'
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../constants/orderConstants'
 import Meta from '../components/Meta'
 
@@ -177,8 +177,8 @@ const OrderOrderScreen = () => {
                     {!order.isPaid && (
                         <ListGroup.Item>
                             {loadingPay && <Loader/>}
-                            {!sdkReady ? <Loader/> : (
-                                <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} />
+                            {!sdkReady ? <Loader/> : ( <Button>Pay</Button>
+                                // <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} />
                             )}
                         </ListGroup.Item>
                     )}
